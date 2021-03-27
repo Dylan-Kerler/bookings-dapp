@@ -50,4 +50,27 @@ describe("Booking", function() {
         reservation = await bookings.reservations(companyId, roomId, hour, 1);
         expect(reservation).to.equal(accounts[1].address);
     });
+
+    it("Should cancel reservation", async function() {
+        const accounts = await ethers.getSigners();
+
+        const Bookings = await ethers.getContractFactory("Bookings");
+        const bookings = await Bookings.deploy();
+
+        await bookings.deployed();
+
+        const [companyId, maxRooms] = [1, 10];
+        await bookings.addCompany(companyId, maxRooms);
+
+        const roomId = 8;
+        const hour = 15;
+        await bookings.addReservation(companyId, roomId, hour);
+        await bookings.connect(accounts[1]).addReservation(companyId, roomId, hour);
+        
+        await bookings.cancelReservation(companyId, roomId, hour);
+        let reservation = await bookings.reservations(companyId, roomId, hour, 0);
+        expect(reservation).to.equal(ethers.constants.AddressZero);
+        reservation = await bookings.reservations(companyId, roomId, hour, 1);
+        expect(reservation).to.equal(accounts[1].address);
+    });
 });
