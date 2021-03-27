@@ -21,6 +21,20 @@ contract Bookings {
     // address -> companyId -> roomId -> hour -> bool
     mapping(address => mapping(uint => mapping(uint => mapping(uint => bool)))) public isRoomReserved;
 
+    event Reservation(
+        address indexed _from,
+        uint _companyId,
+        uint _roomId,
+        uint _hour
+    );
+
+    event Cancellation(
+        address indexed _from,
+        uint _companyId,
+        uint _roomId,
+        uint _hour
+    );
+
     constructor() {
         owner = msg.sender;
     }
@@ -48,6 +62,8 @@ contract Bookings {
         reservations[companyId][roomId][hour].push(msg.sender);
         reservationLengths[companyId][roomId][hour] += 1;
         isRoomReserved[msg.sender][companyId][roomId][hour] = true;
+
+        emit Reservation(msg.sender, companyId, roomId, hour);
     }
 
     function cancelReservation(uint companyId, uint roomId, uint hour) public {
@@ -67,5 +83,7 @@ contract Bookings {
 
         reservationLengths[companyId][roomId][hour] -= 1;
         isRoomReserved[msg.sender][companyId][roomId][hour] = false;
+
+        emit Cancellation(msg.sender, companyId, roomId, hour);
     }
 }

@@ -19,18 +19,21 @@ const CardsContainer = styled.div`
 interface Props {
     onChange: (value: number) => void,
     value: number,
+    options: { name: string, waiting: number }[],
 }
 
-export const RoomSelect = ({ value, onChange }: Props) => {
+export const RoomSelect = ({ value, onChange, options }: Props) => {
     return (
         <Container>
             <div>Select a room</div>
             <CardsContainer>
                 {
-                    [0, 1,2,3,4,5,6].map(index => 
+                    options.map(({ waiting, name }, index) => 
                         <RoomCard
                             onClick={() => onChange(index)}
                             isSelected={value === index}
+                            waiting={waiting}
+                            name={name}
                         />
                     )
                 }

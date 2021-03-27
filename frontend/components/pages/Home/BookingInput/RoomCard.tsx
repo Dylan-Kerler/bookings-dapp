@@ -29,15 +29,23 @@ const Container = styled.div<{ isSelected: boolean }>`
 interface Props {
     isSelected: boolean,
     onClick: () => void,
+    name: string,
+    waiting: number,
 }
 
-export const RoomCard = ({ isSelected, onClick }: Props) => {
+export const RoomCard = ({ isSelected, onClick, name, waiting }: Props) => {
     const theme = useContext(ThemeContext);
 
     return (
         <Container onClick={onClick} isSelected={isSelected}>
-            <MinorTitle>Room 1</MinorTitle>
-            <div>14 waiting</div>
+            <MinorTitle>{name}</MinorTitle>
+            <div>
+                {
+                    waiting === 0 ?
+                        "Available"
+                        : `${waiting} waiting`
+                }
+            </div>
         </Container>
     );
 }

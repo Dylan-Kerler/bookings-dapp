@@ -1,0 +1,21 @@
+{
+    "extends": "@tsconfig/recommended/tsconfig.json",
+
+    "compilerOptions": {
+        "outDir": "./dist",
+        "sourceMap": true,
+        "alwaysStrict": true,
+        "noImplicitAny": true,
+        "noImplicitThis": true,
+        "noUnusedLocals": true,
+        "strictBindCallApply": true,
+        "strictNullChecks": true,
+        "strictPropertyInitialization": true,
+        "preserveConstEnums": true,
+        "resolveJsonModule": true,
+    },
+    
+    "include": [
+        "src"
+    ]
+}

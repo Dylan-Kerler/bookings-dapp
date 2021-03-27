@@ -14,8 +14,9 @@ const Container = styled.div`
     text-align: center;
 
     > div {
-        margin-top: 50%;
-        margin-left: 50%;
+        position: absolute;
+        top: 40%;
+        left: 50%;
         transform: translate(-50%, -50%);
         display: grid;
         row-gap: 12px;

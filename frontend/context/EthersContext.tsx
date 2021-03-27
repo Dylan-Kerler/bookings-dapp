@@ -1,6 +1,6 @@
 import { ethers } from "ethers";
 import { createContext, useMemo, useState } from "react";
-import BookingsArtifact from "../../smart-contracts/deployments/localhost/Bookings.json";
+import BookingsArtifact from "../../smart-contracts/deployments/ganache/Bookings.json";
 
 export const EthersContext = createContext({
     signer: null,
