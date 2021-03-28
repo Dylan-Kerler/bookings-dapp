@@ -15,7 +15,7 @@ docker-compose pull
 docker-compose up
 ```
 
-This will take about 60 seconds to start up. 
+This will take about 5 minutes to install and 60 seconds to start up (lots of dependencies for blockchain projects...).
 
 Website is served at: http://localhost:3000 (make sure to follow "Step 2" before testing this out)
 
