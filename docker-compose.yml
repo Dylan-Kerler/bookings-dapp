@@ -13,7 +13,7 @@ services:
         - 8545
     command: --account=0xd81780450e195fc89a88f3221b1a9410f1904fbe224b35818010b07eada8ddb3,1000000000000000000000
   bookings-dapp:
-    image: "bookings-dapp"
+    image: "dylankerler/bookings-dapp"
     links:
       - mongo
     ports:

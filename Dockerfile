@@ -14,7 +14,7 @@ RUN yarn --cwd /backend tsc
 
 EXPOSE 7545 3000 8080
 
-CMD sleep 5 \
+CMD sleep 10 \
     && (yarn --cwd ./smart-contracts deploy-ganache --show-stack-traces \
     & yarn --cwd ./frontend dev \
     & yarn --cwd ./backend start)
