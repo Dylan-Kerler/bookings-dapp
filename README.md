@@ -1,6 +1,6 @@
 # Bookings DApp
 
-There are 2 steps to running this locally:
+There are 3 steps to running this locally:
 
 First, you'll need docker and docker-compose installed.
 
@@ -33,11 +33,15 @@ RPC URL: `127.0.0.1:8545`
 
 Chain ID: `1337`
 
+## Step 3
+
 Import this private key into Metamask:
 
 ```
 d81780450e195fc89a88f3221b1a9410f1904fbe224b35818010b07eada8ddb3
 ```
+
+This will give you a balance of 1000 Ether to test with.
 
 In metamask, switch to the account that you just imported and switch to the ganache network that you just added.
 
