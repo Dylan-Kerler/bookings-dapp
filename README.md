@@ -11,6 +11,7 @@ Start ganache, deploy the contracts, start mongodb, start the backend server and
 ```
 git clone https://github.com/Dylan-Kerler/bookings-dapp
 cd bookings-dapp
+docker-compose pull
 docker-compose up
 ```
 
