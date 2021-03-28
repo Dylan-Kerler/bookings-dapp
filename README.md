@@ -9,6 +9,8 @@ First, you'll need docker and docker-compose installed.
 Start ganache, deploy the contracts, start mongodb, start the backend server and, start the frontend server.
 
 ```
+git clone https://github.com/Dylan-Kerler/bookings-dapp
+cd bookings-dapp
 docker-compose up
 ```
 
