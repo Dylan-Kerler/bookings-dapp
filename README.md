@@ -40,9 +40,9 @@ d81780450e195fc89a88f3221b1a9410f1904fbe224b35818010b07eada8ddb3
 
 In metamask, switch to the account that you just imported and switch to the ganache network that you just added.
 
-In Metamask, go into the "Advanced" section and reset the account.
+In Metamask, go into the "Settings" -> "Advanced" section and reset the account.
 This will reset the nonce on the account back to 0;
-Resetting is required each time the server is started again or transactions will fail.
+**Resetting is required each time the server is started again or transactions WILL fail.**
 
 Go to http://localhost:3000 and "Connect Wallet"
 
@@ -50,3 +50,5 @@ Go to http://localhost:3000 and "Connect Wallet"
 ## Debugging
 
 If transactions are failing then open the console. All of the logs are in there so it should indicate what the issue is.
+
+If you get a "Failed to fetch" error on the website then restart `docker-compose up`.
